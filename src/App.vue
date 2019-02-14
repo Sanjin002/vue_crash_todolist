@@ -11,7 +11,6 @@ import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import axios from  'axios';
-
 export default {
   name: 'app',
   components: {
@@ -34,7 +33,7 @@ export default {
   },
   created() {
 axios.get('http://meteo.pointjupiter.co')
-  .then(res => this.todos = res.data)
+  .then(res => this.todos = res.data.cities)
   .catch(err => console.log(err));
   }
 }
@@ -46,7 +45,6 @@ axios.get('http://meteo.pointjupiter.co')
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
