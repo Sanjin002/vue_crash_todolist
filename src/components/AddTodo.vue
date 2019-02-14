@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<form @submit="addTodo">
-			<input type="text" v-model="name" name="name" placeholder="Add Todo...">
+			<input type="text" v-model="name" name="name" placeholder="Dodaj grad...">
 			<input type="submit" value="Submit" class="btn">
 		</form>
 	</div>
@@ -26,7 +26,7 @@ export default {
 			}
 			// Send up to parent
 			this.$emit('add-todo', newTodo);
-			this.name = '';
+			this.title = '';
 		}
 	}
 }
